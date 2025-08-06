@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quantum - Instructivo</title>
+    <!-- Carga de Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700;800&family=Work+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Work Sans', sans-serif;
+            --uniminuto-blue: #00205B;
+            --uniminuto-yellow: #FFC72C;
+            --uniminuto-gray: #75787B;
+            background-color: #f4f6f9;
+            color: #333;
+        }
+        h1, h2, h3, h4, h5, h6, .font-header {
+            font-family: 'Poppins', sans-serif;
+        }
+        .header-link.active {
+            color: var(--uniminuto-blue);
+            font-weight: 700;
+        }
+        .logo-text {
+            font-weight: 800;
+            font-size: 2.5rem;
+            line-height: 1;
+            color: #ffffff;
+            letter-spacing: -0.05em;
+        }
+    </style>
+</head>
+<body class="min-h-screen flex flex-col">
+    <header class="bg-white z-20 sticky top-0 border-b border-gray-200">
+        <div class="container mx-auto flex justify-between items-center h-20 px-6">
+            <div class="flex items-center gap-4">
+                <span class="text-3xl font-extrabold text-[var(--uniminuto-blue)] font-header">Quantum</span>
+            </div>
+            <nav class="hidden md:flex items-center gap-8 text-[var(--uniminuto-gray)] font-semibold">
+                <a href="principal.html" class="header-link hover:text-[var(--uniminuto-blue)] transition-colors">Inicio</a>
+                <a href="plantillas.html" class="header-link hover:text-[var(--uniminuto-blue)] transition-colors">Cuadros Maestros</a>
+                <a href="instructivo.html" class="header-link active hover:text-[var(--uniminuto-blue)] transition-colors">Instructivo</a>
+                <a href="repositorio.html" class="header-link hover:text-[var(--uniminuto-blue)] transition-colors">Repositorio</a>
+            </nav>
+        </div>
+    </header>
+    <main class="flex-grow py-16 bg-gray-100">
+        <div class="container mx-auto px-4 text-center">
+            <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-6">Instructivo de Uso de Quantum</h2>
+            <p class="text-lg text-gray-600 max-w-3xl mx-auto mb-8">
+                Bienvenido al instructivo de Quantum. Sigue estos sencillos pasos para generar tus Cuadros Maestros de forma eficiente.
+            </p>
+            <div class="bg-white p-8 rounded-lg shadow-md max-w-4xl mx-auto text-left">
+                <h3 class="text-2xl font-semibold text-gray-700 mb-4">Pasos para Generar un Reporte:</h3>
+                <ol class="list-decimal list-inside space-y-3 text-gray-700 text-lg">
+                    <li><b>Navega a Cuadros Maestros:</b> Haz clic en "Cuadros Maestros" en el menú de navegación para ver todas las plantillas disponibles.</li>
+                    <li><b>Busca tu Plantilla:</b> Utiliza el campo de búsqueda para encontrar rápidamente la plantilla que necesitas (ej. "Prácticas" o "Becas").</li>
+                    <li><b>Selecciona y Genera:</b> Haz clic en el botón "Generar" de la tarjeta de la plantilla deseada.</li>
+                    <li><b>Ingresa el Código:</b> En la ventana emergente, introduce el Código de Programa (SNIES o el código específico que se te solicite) para tu programa académico.</li>
+                    <li><b>Descarga el Reporte:</b> Haz clic en "Generar y Descargar Reporte". El sistema procesará los datos y el archivo Excel se descargará automáticamente en tu dispositivo.</li>
+                </ol>
+                <h3 class="text-2xl font-semibold text-gray-700 mt-8 mb-4">Consideraciones Importantes:</h3>
+                <ul class="list-disc list-inside space-y-3 text-gray-700 text-lg">
+                    <li>Asegúrate de que el código de programa ingresado sea correcto para obtener el reporte adecuado.</li>
+                    <li>Si tienes problemas para generar o descargar un reporte, verifica tu conexión a internet o contacta al equipo de soporte.</li>
+                    <li>Para más información sobre las plantillas o la estructura de los datos, visita la sección de <a href="repositorio.html" class="text-[var(--uniminuto-blue)] hover:underline font-semibold">Repositorio</a>.</li>
+                </ul>
+            </div>
+        </div>
+    </main>
+    <footer class="bg-gray-100 text-[var(--uniminuto-gray)] mt-12 border-t">
+        <div class="container mx-auto py-6 px-6 text-center">
+            <p class="font-bold text-sm text-[var(--uniminuto-blue)]">Quantum - UNIMINUTO Corporación Universitaria Minuto de Dios</p>
+            <p class="text-xs">Educación de calidad al alcance de todos</p>
+        </div>
+    </footer>
+</body>
+</html> 
