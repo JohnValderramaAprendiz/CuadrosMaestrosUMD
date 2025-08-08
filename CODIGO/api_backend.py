@@ -48,15 +48,24 @@ def generar_reporte():
 # Ruta para servir archivos estáticos (HTML)
 @app.route('/')
 def index():
-    return send_file(os.path.join(BASE_PATH, 'principal.html'))
+    try:
+        return send_file(os.path.join(BASE_PATH, 'principal.html'))
+    except:
+        return send_file('principal.html')
 
 @app.route('/plantillas')
 def plantillas():
-    return send_file(os.path.join(BASE_PATH, 'plantillas.html'))
+    try:
+        return send_file(os.path.join(BASE_PATH, 'plantillas.html'))
+    except:
+        return send_file('plantillas.html')
 
 @app.route('/instructivo')
 def instructivo():
-    return send_file(os.path.join(BASE_PATH, 'instructivo.html'))
+    try:
+        return send_file(os.path.join(BASE_PATH, 'instructivo.html'))
+    except:
+        return send_file('instructivo.html')
 
 if __name__ == '__main__':
     port = int(os.environ.get('PORT', 5000))
