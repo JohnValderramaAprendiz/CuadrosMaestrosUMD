@@ -190,7 +190,7 @@
             modalGenerateBtn.textContent = 'Generando... por favor espere';
             showModalMessage('Generando su reporte, por favor espere...', 'bg-blue-100 text-blue-700');
             try {
-                const response = await fetch('http://127.0.0.1:5000/generar_reporte', {
+                const response = await fetch('/generar_reporte', {
                     method: 'POST',
                     headers: { 'Content-Type': 'application/json' },
                     body: JSON.stringify({ plantilla: parseInt(plantilla), codigo: parseInt(codigo) })
@@ -217,7 +217,7 @@
                     showModalMessage(`Error al generar el reporte: ${errorData.error || 'Error desconocido'}`, 'bg-red-100 text-red-700');
                 }
             } catch (error) {
-                showModalMessage('No se pudo conectar con el servidor. Asegúrate de que la API Flask esté corriendo en http://127.0.0.1:5000.', 'bg-red-100 text-red-700');
+                showModalMessage('No se pudo conectar con el servidor. Verifica tu conexión a internet e intenta nuevamente.', 'bg-red-100 text-red-700');
             } finally {
                 modalGenerateBtn.disabled = false;
                 modalGenerateBtn.textContent = 'Generar y Descargar Reporte';
