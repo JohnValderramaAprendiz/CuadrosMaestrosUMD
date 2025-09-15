@@ -1,11 +1,12 @@
 from flask import Flask, request, jsonify, send_file
 from flask_cors import CORS
 import os
-from automatizacion_cm01 import generar_reporte_cm1
+# from automatizacion_cm01 import generar_reporte_cm1 # <-- COMENTADO
 from automatizacion_cm09 import generar_reporte_practicas
 from automatizacion_cm20 import generar_reporte_final_con_condicional
-from automatizacion_cm03 import generar_reporte_profesores
-from automatizacion_cm10 import generar_reporte_proyeccion_social
+# from automatizacion_cm03 import generar_reporte_profesores # <-- COMENTADO
+# from automatizacion_cm10 import generar_reporte_proyeccion_social # <-- COMENTADO
+from automatizacion_cm12 import generar_reporte_inmuebles
 
 app = Flask(__name__)
 CORS(app)
@@ -23,14 +24,22 @@ def generar_reporte():
     if not plantilla or not codigo:
         return jsonify({'error': 'Faltan datos de plantilla o código'}), 400
 
-    if plantilla == 1:
-        resultado, error = generar_reporte_cm1(codigo, BASE_PATH)
-    elif plantilla == 3:
-        resultado, error = generar_reporte_profesores(codigo, BASE_PATH)
-    elif plantilla == 9:
+    # --- BLOQUES 1 y 3 COMENTADOS ---
+    # if plantilla == 1:
+    #     resultado, error = generar_reporte_cm1(codigo, BASE_PATH)
+    # elif plantilla == 3:
+    #     resultado, error = generar_reporte_profesores(codigo, BASE_PATH)
+
+    # --- EL PRIMER ACTIVO AHORA ES UN 'if' ---
+    if plantilla == 9:
         resultado, error = generar_reporte_practicas(codigo, BASE_PATH)
-    elif plantilla == 10:
-        resultado, error = generar_reporte_proyeccion_social(codigo, BASE_PATH)
+    
+    # --- BLOQUE 10 COMENTADO ---
+    # elif plantilla == 10:
+    #     resultado, error = generar_reporte_proyeccion_social(codigo, BASE_PATH)
+    
+    elif plantilla == 12:
+        resultado, error = generar_reporte_inmuebles(codigo, BASE_PATH)
     elif plantilla == 20:
         resultado, error = generar_reporte_final_con_condicional(codigo, BASE_PATH)
     else:
@@ -45,7 +54,7 @@ def generar_reporte():
     # Enviar el archivo generado para descarga
     return send_file(resultado, as_attachment=True)
 
-# Ruta para servir archivos estáticos (HTML)
+# Rutas para servir archivos estáticos (HTML)
 @app.route('/')
 def index():
     try:
@@ -69,4 +78,4 @@ def instructivo():
 
 if __name__ == '__main__':
     port = int(os.environ.get('PORT', 5000))
-    app.run(host='0.0.0.0', port=port, debug=False) 
+    app.run(host='0.0.0.0', port=port, debug=False)

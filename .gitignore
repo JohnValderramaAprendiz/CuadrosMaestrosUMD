@@ -1,47 +1,14 @@
-# Python
+# Python cache
 __pycache__/
-*.py[cod]
-*$py.class
-*.so
-.Python
-build/
-develop-eggs/
-dist/
-downloads/
-eggs/
-.eggs/
-lib/
-lib64/
-parts/
-sdist/
-var/
-wheels/
-*.egg-info/
-.installed.cfg
-*.egg
+*.pyc
 
-# Virtual environments
+# Carpeta de resultados generados
+/RESULTADOS/
+
+# Entornos virtuales
 venv/
-env/
-ENV/
+*.venv
 
-# IDE
-.vscode/
-.idea/
-*.swp
-*.swo
-
-# OS
-.DS_Store
-Thumbs.db
-
-# Logs
-*.log
-logs/
-
-# Azure
-.azure/
-
-# Local development
-.env
-local_settings.py
+# Archivos de datos locales a ignorar
+BD_CM.xlsx
+"Encargados CM.xlsx"
